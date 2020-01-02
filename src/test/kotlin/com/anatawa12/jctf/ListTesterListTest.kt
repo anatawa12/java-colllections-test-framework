@@ -44,4 +44,9 @@ class ListTesterListTest : ListTester<Any?>() {
     fun lastIndexOf() = super.lastIndexOfTest()
     @Test
     fun set() = super.setTest()
+
+    @Test
+    fun equals() = super.equalsTest()
+    @Test
+    fun hashcode() = super.hashcodeTest()
 }

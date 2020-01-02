@@ -1,6 +1,7 @@
 package com.anatawa12.jctf
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * Created by anatawa12 on 2020/01/02.
@@ -115,5 +116,20 @@ abstract class ListTester<E> : CollectionsTester<E>() {
         val element = createElement()
         list[2] = element
         assertEquals(element, list[2]) { "get(2)" }
+    }
+
+    open fun equalsTest() {
+        val elements = createElements(5)
+        val list = createCollectionWithElements(elements)
+        assertTrue(elements.equals(list)) { "equals()" }
+    }
+
+    open fun hashcodeTest() {
+        val elements = createElements(5)
+        val list = createCollectionWithElements(elements)
+        var hashCode = 1
+        for (e in list) hashCode = 31 * hashCode + (e?.hashCode() ?: 0)
+
+        assertEquals(hashCode, list.hashCode()) { "hashCode()" }
     }
 }
