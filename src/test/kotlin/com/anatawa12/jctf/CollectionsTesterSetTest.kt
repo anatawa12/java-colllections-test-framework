@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test
 /**
  * Created by anatawa12 on 2020/01/02.
  */
-class CollectionsTesterTest : CollectionsTester<Any?>() {
-    override fun createCollection(): Collection<Any?> = mutableListOf()
+class CollectionsTesterSetTest : CollectionsTester<Any?>() {
+    override fun createCollection(): Collection<Any?> = mutableSetOf()
 
     override fun createElement(): Any? = Any()
 
